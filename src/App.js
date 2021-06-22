@@ -1,27 +1,12 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import Component from "./Component.jsx";
+import Day1 from "./Day1/Day1";
+import Day2 from "./Day2/Day2";
 
 function App() {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    fetch(
-      "https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1"
-    )
-      .then((res) => res.json())
-      .then((data) => setUsers(data))
-      .catch((err) => console.log(err));
-  });
-
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      {users.map((data) => (
-        <h3>
-          <Component country={data.country} timeline={data.timeline} />
-        </h3>
-      ))}
+      {/* <Day1 /> */}
+      <Day2 />
     </div>
   );
 }
